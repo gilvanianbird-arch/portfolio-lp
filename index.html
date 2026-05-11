@@ -1,0 +1,1806 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMIÈRE | ヴェロア セラム ファンデーション</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #1B2A5C;
+      --navy-dark:  #111C40;
+      --gold:       #C9A96E;
+      --gold-light: #E8D5A3;
+      --gold-pale:  #F5EDD8;
+      --cream:      #FAF6EF;
+      --white:      #FFFFFF;
+      --text-dark:  #2C2C2C;
+      --text-mid:   #555555;
+      --text-light: #888888;
+      --line:       rgba(201,169,110,0.35);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--white);
+      color: var(--text-dark);
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ========== HEADER ========== */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--navy-dark);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 64px;
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 22px;
+      letter-spacing: 0.25em;
+      color: var(--gold-light);
+      text-decoration: none;
+    }
+
+    nav { display: flex; gap: 36px; align-items: center; }
+    nav a {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: rgba(232,213,163,0.75);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: var(--gold-light); }
+
+    .header-cta {
+      background: var(--gold);
+      color: var(--navy-dark) !important;
+      padding: 9px 22px;
+      font-weight: 500 !important;
+      letter-spacing: 0.12em !important;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      margin-top: 64px;
+      height: calc(100vh - 64px);
+      min-height: 580px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #2a1f0e 0%, #4a3520 25%, #c8a882 60%, #e8d0a8 85%, #f5e8cc 100%);
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-bg-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 70% 50%, rgba(232,208,168,0.5) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 20% 30%, rgba(26,28,64,0.6) 0%, transparent 60%);
+    }
+
+    /* Decorative light rays */
+    .hero-rays {
+      position: absolute;
+      top: -10%;
+      right: 15%;
+      width: 600px;
+      height: 130%;
+      background: conic-gradient(from 210deg at 70% 20%,
+        rgba(245,237,216,0.18) 0deg,
+        transparent 15deg,
+        rgba(245,237,216,0.10) 22deg,
+        transparent 35deg,
+        rgba(245,237,216,0.14) 40deg,
+        transparent 55deg,
+        rgba(245,237,216,0.08) 60deg,
+        transparent 75deg
+      );
+      pointer-events: none;
+    }
+
+    /* Abstract face silhouette using SVG-style CSS */
+    .hero-model {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 55%;
+      height: 100%;
+    }
+
+    .hero-model svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 8% 0 7%;
+      max-width: 520px;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 12px;
+      letter-spacing: 0.35em;
+      color: var(--gold-light);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .hero-eyebrow::before, .hero-eyebrow::after {
+      content: '';
+      display: block;
+      height: 1px;
+      background: var(--gold);
+      flex: 0 0 32px;
+    }
+
+    .hero-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--white);
+      margin-bottom: 10px;
+      text-shadow: 0 2px 24px rgba(0,0,0,0.35);
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-light);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15em;
+    }
+
+    .hero-sub {
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      color: rgba(245,237,216,0.82);
+      line-height: 1.9;
+      margin-bottom: 40px;
+    }
+
+    .hero-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      padding: 14px 34px;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-decoration: none;
+      transition: all 0.4s;
+    }
+    .hero-btn:hover {
+      background: var(--gold);
+      color: var(--navy-dark);
+    }
+    .hero-btn svg { transition: transform 0.3s; }
+    .hero-btn:hover svg { transform: translateX(4px); }
+
+    .hero-product-name {
+      position: absolute;
+      bottom: 48px;
+      right: 5%;
+      text-align: right;
+      z-index: 2;
+    }
+    .hero-product-name .pname {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px;
+      letter-spacing: 0.25em;
+      color: var(--gold-light);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .hero-product-name .psub {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      color: rgba(232,213,163,0.6);
+    }
+
+    /* ========== SCROLL INDICATOR ========== */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      z-index: 2;
+    }
+    .scroll-indicator span {
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+    }
+    .scroll-line {
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: scrollLine 2s ease-in-out infinite;
+    }
+    @keyframes scrollLine {
+      0%   { transform: scaleY(0); transform-origin: top; }
+      50%  { transform: scaleY(1); transform-origin: top; }
+      51%  { transform: scaleY(1); transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; }
+    }
+
+    /* ========== SECTION COMMONS ========== */
+    section { padding: 100px 0; }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .section-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 11px;
+      letter-spacing: 0.4em;
+      color: var(--gold);
+      text-align: center;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(22px, 3vw, 32px);
+      font-weight: 300;
+      text-align: center;
+      letter-spacing: 0.06em;
+      line-height: 1.7;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .section-lead {
+      text-align: center;
+      font-size: 14px;
+      line-height: 2.0;
+      color: var(--text-mid);
+      letter-spacing: 0.06em;
+      max-width: 640px;
+      margin: 0 auto 60px;
+    }
+
+    .gold-line {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .gold-line::before, .gold-line::after {
+      content: '';
+      height: 1px;
+      width: 48px;
+      background: linear-gradient(to right, transparent, var(--gold));
+    }
+    .gold-line::after {
+      background: linear-gradient(to left, transparent, var(--gold));
+    }
+    .gold-line-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    /* ========== PHILOSOPHY ========== */
+    .philosophy {
+      background: var(--cream);
+    }
+
+    .philosophy-quote {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(18px, 2.5vw, 28px);
+      font-weight: 300;
+      line-height: 2.0;
+      text-align: center;
+      letter-spacing: 0.08em;
+      color: var(--navy);
+      margin-bottom: 40px;
+    }
+
+    .philosophy-note {
+      font-size: 11px;
+      color: var(--text-light);
+      letter-spacing: 0.12em;
+      text-align: center;
+    }
+
+    /* ========== FEATURES ========== */
+    .features { background: var(--white); }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 60px;
+    }
+
+    .feature-card {
+      background: var(--cream);
+      padding: 56px 36px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s;
+    }
+    .feature-card:hover { transform: translateY(-4px); }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(to right, var(--gold-light), var(--gold));
+      transform: scaleX(0);
+      transition: transform 0.4s;
+    }
+    .feature-card:hover::before { transform: scaleX(1); }
+
+    .feature-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 300;
+      color: var(--gold-light);
+      line-height: 1;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .feature-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 24px;
+    }
+
+    .feature-title-en {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .feature-title-ja {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .feature-text {
+      font-size: 13px;
+      line-height: 2.0;
+      color: var(--text-mid);
+      letter-spacing: 0.04em;
+    }
+
+    /* ========== PRODUCT DETAIL ========== */
+    .product-detail {
+      background: var(--navy-dark);
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .product-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 680px;
+    }
+
+    .product-visual {
+      background: linear-gradient(145deg, #2a1f14, #4a3520, #9a7a50, #c8a882);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      min-height: 500px;
+    }
+
+    .product-visual-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(201,169,110,0.3) 0%, transparent 65%),
+        radial-gradient(circle at 80% 20%, rgba(245,237,216,0.15) 0%, transparent 40%);
+    }
+
+    /* Decorative product bottle illustration using CSS */
+    .bottle-art {
+      position: relative;
+      z-index: 2;
+      width: 140px;
+      filter: drop-shadow(0 20px 60px rgba(0,0,0,0.5));
+    }
+
+    .product-info {
+      padding: 80px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .product-badge {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 10px;
+      letter-spacing: 0.4em;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      display: inline-block;
+      padding: 5px 14px;
+      margin-bottom: 28px;
+      align-self: flex-start;
+    }
+
+    .product-name-en {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px;
+      letter-spacing: 0.3em;
+      color: var(--gold-light);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .product-name-ja {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(22px, 3vw, 32px);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.5;
+      letter-spacing: 0.05em;
+      margin-bottom: 28px;
+    }
+
+    .product-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      margin-bottom: 28px;
+    }
+
+    .product-description {
+      font-size: 13px;
+      line-height: 2.1;
+      color: rgba(245,237,216,0.75);
+      letter-spacing: 0.05em;
+      margin-bottom: 40px;
+    }
+
+    .product-specs {
+      display: flex;
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+
+    .spec-item .spec-label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .spec-item .spec-value {
+      font-size: 13px;
+      color: var(--white);
+      letter-spacing: 0.06em;
+    }
+
+    /* Color swatches */
+    .color-title {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    .color-swatches {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+
+    .swatch {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.2s;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+    .swatch:hover { transform: scale(1.15); }
+    .swatch.active::after {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      border: 1.5px solid var(--gold-light);
+    }
+    .swatch.s1 { background: #E8C9B2; }
+    .swatch.s2 { background: #D4A882; }
+    .swatch.s3 { background: #C49060; }
+    .swatch.s4 { background: #B07848; }
+    .swatch.s5 { background: #E2C0B8; }
+
+    .swatch-name {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: rgba(232,213,163,0.7);
+      margin-top: 6px;
+      text-align: center;
+    }
+
+    .swatch-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .product-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px;
+      letter-spacing: 0.15em;
+      color: var(--gold-light);
+      margin-bottom: 24px;
+    }
+    .product-price strong {
+      font-size: 26px;
+      font-weight: 400;
+      color: var(--gold-light);
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--gold);
+      color: var(--navy-dark);
+      padding: 16px 40px;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.35s;
+      align-self: flex-start;
+    }
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(201,169,110,0.35);
+    }
+
+    /* ========== INGREDIENTS ========== */
+    .ingredients { background: var(--cream); }
+
+    .ingredients-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      margin-top: 60px;
+    }
+
+    .ingredient-card {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .ingredient-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 24px;
+    }
+
+    .ingredient-name-en {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .ingredient-name-ja {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 14px;
+      color: var(--navy);
+      letter-spacing: 0.08em;
+      display: block;
+      margin-bottom: 14px;
+    }
+
+    .ingredient-text {
+      font-size: 12px;
+      line-height: 1.9;
+      color: var(--text-mid);
+      letter-spacing: 0.04em;
+    }
+
+    /* ========== TEXTURE SECTION ========== */
+    .texture-section { background: var(--white); }
+
+    .texture-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin-top: 60px;
+    }
+
+    .texture-visual {
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, #f5e8d0, #e8d0b0, #d4b890, #c8a878);
+      border-radius: 50%;
+      position: relative;
+      overflow: hidden;
+      box-shadow:
+        0 0 0 20px rgba(201,169,110,0.08),
+        0 0 0 40px rgba(201,169,110,0.04);
+    }
+
+    .texture-visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 35% 35%, rgba(255,255,255,0.45) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 60% at 70% 70%, rgba(150,100,50,0.25) 0%, transparent 55%);
+    }
+
+    .texture-points { display: flex; flex-direction: column; gap: 32px; }
+
+    .texture-point {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--line);
+    }
+    .texture-point:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .texture-point-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-weight: 300;
+      color: var(--gold-light);
+      line-height: 1;
+      flex-shrink: 0;
+      padding-top: 4px;
+    }
+
+    .texture-point-content {}
+
+    .texture-point-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .texture-point-text {
+      font-size: 13px;
+      line-height: 2.0;
+      color: var(--text-mid);
+      letter-spacing: 0.04em;
+    }
+
+    /* ========== HOW TO USE ========== */
+    .howto { background: var(--navy-dark); padding: 100px 0; }
+
+    .howto .section-title { color: var(--gold-light); }
+    .howto .section-lead { color: rgba(245,237,216,0.7); }
+    .howto .section-label { color: var(--gold); }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      margin-top: 60px;
+    }
+
+    .step {
+      background: rgba(255,255,255,0.04);
+      padding: 48px 28px;
+      text-align: center;
+      position: relative;
+    }
+
+    .step::after {
+      content: '→';
+      position: absolute;
+      right: -14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gold);
+      font-size: 18px;
+      z-index: 1;
+    }
+    .step:last-child::after { display: none; }
+
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 11px;
+      letter-spacing: 0.35em;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .step-icon {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 20px;
+    }
+
+    .step-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--white);
+      letter-spacing: 0.06em;
+      margin-bottom: 12px;
+    }
+
+    .step-text {
+      font-size: 12px;
+      line-height: 1.9;
+      color: rgba(245,237,216,0.6);
+      letter-spacing: 0.04em;
+    }
+
+    /* ========== TESTIMONIALS ========== */
+    .testimonials { background: var(--cream); }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      padding: 40px 32px;
+      position: relative;
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 80px;
+      color: var(--gold-light);
+      position: absolute;
+      top: 16px;
+      left: 24px;
+      line-height: 1;
+      opacity: 0.4;
+    }
+
+    .testimonial-stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 20px;
+    }
+    .star {
+      width: 14px; height: 14px;
+      background: var(--gold);
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    }
+
+    .testimonial-text {
+      font-size: 13px;
+      line-height: 2.1;
+      color: var(--text-mid);
+      letter-spacing: 0.04em;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+    }
+
+    .author-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .author-info .name {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--navy);
+      letter-spacing: 0.08em;
+      display: block;
+    }
+    .author-info .age {
+      font-size: 11px;
+      color: var(--text-light);
+      letter-spacing: 0.06em;
+    }
+
+    /* ========== CTA SECTION ========== */
+    .cta-section {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, #2a3870 100%);
+      padding: 120px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: 'LUMIÈRE';
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 220px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.03);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .cta-section .section-label { color: var(--gold); }
+    .cta-section .section-title { color: var(--white); }
+    .cta-section .section-lead { color: rgba(245,237,216,0.7); }
+
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 48px;
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      border: 1px solid rgba(201,169,110,0.5);
+      color: var(--gold-light);
+      padding: 15px 36px;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-decoration: none;
+      transition: all 0.35s;
+    }
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: #0a1020;
+      padding: 80px 0 40px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 64px;
+      padding-bottom: 60px;
+      border-bottom: 1px solid rgba(201,169,110,0.15);
+    }
+
+    .footer-brand .logo { font-size: 26px; display: block; margin-bottom: 20px; }
+    .footer-tagline {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 12px;
+      line-height: 1.9;
+      color: rgba(232,213,163,0.5);
+      letter-spacing: 0.1em;
+    }
+
+    .footer-nav-title {
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .footer-nav { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .footer-nav a {
+      font-size: 12px;
+      color: rgba(232,213,163,0.5);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      transition: color 0.3s;
+    }
+    .footer-nav a:hover { color: var(--gold-light); }
+
+    .footer-bottom {
+      padding-top: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom p {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: rgba(201,169,110,0.35);
+    }
+
+    /* ========== ANNOUNCEMENT BAR ========== */
+    .announcement {
+      background: var(--gold);
+      color: var(--navy-dark);
+      text-align: center;
+      padding: 10px;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      font-weight: 500;
+    }
+
+    /* ========== DIVIDER ========== */
+    .ornament-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 0 auto 64px;
+      max-width: 300px;
+      justify-content: center;
+    }
+    .ornament-divider::before, .ornament-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+    .ornament-diamond {
+      width: 8px; height: 8px;
+      background: var(--gold);
+      transform: rotate(45deg);
+    }
+
+    /* ========== CONCEPT BANNER ========== */
+    .concept-banner {
+      background: var(--navy);
+      padding: 72px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .concept-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 120% at 50% 50%, rgba(201,169,110,0.12) 0%, transparent 70%);
+    }
+    .concept-text {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(16px, 2.5vw, 24px);
+      font-weight: 300;
+      line-height: 2.0;
+      letter-spacing: 0.12em;
+      color: var(--white);
+      position: relative;
+      z-index: 1;
+    }
+    .concept-text em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--gold-light);
+      font-size: 1.3em;
+    }
+
+    /* ========== ANIMATIONS ========== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-in-delay-1 { transition-delay: 0.1s; }
+    .fade-in-delay-2 { transition-delay: 0.2s; }
+    .fade-in-delay-3 { transition-delay: 0.3s; }
+    .fade-in-delay-4 { transition-delay: 0.4s; }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 768px) {
+      header { padding: 0 20px; }
+      nav { display: none; }
+      .section-inner { padding: 0 24px; }
+      section { padding: 72px 0; }
+
+      .hero-content { padding: 0 24px; max-width: 100%; }
+      .hero-model { display: none; }
+      .hero { min-height: 100svh; }
+
+      .features-grid { grid-template-columns: 1fr; gap: 2px; }
+      .product-split { grid-template-columns: 1fr; }
+      .product-visual { min-height: 280px; }
+      .product-info { padding: 48px 24px; }
+      .ingredients-grid { grid-template-columns: repeat(2, 1fr); }
+      .texture-split { grid-template-columns: 1fr; gap: 40px; }
+      .texture-visual { display: none; }
+      .steps { grid-template-columns: repeat(2, 1fr); }
+      .step::after { display: none; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+      .hero-product-name { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT -->
+<div class="announcement">
+  新発売 — ヴェロア セラム ファンデーション　全5色　2024年秋冬コレクション
+</div>
+
+<!-- HEADER -->
+<header>
+  <a href="#" class="logo">LUMIÈRE</a>
+  <nav>
+    <a href="#concept">CONCEPT</a>
+    <a href="#product">PRODUCT</a>
+    <a href="#ingredients">INGREDIENTS</a>
+    <a href="#howto">HOW TO USE</a>
+    <a href="#purchase" class="header-cta">PURCHASE</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg-overlay"></div>
+  <div class="hero-rays"></div>
+
+  <!-- Decorative model silhouette -->
+  <div class="hero-model">
+    <svg viewBox="0 0 500 800" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax meet">
+      <!-- Abstract elegant face silhouette -->
+      <defs>
+        <radialGradient id="skinGrad" cx="50%" cy="35%" r="55%">
+          <stop offset="0%" stop-color="#f5dbb8" stop-opacity="0.9"/>
+          <stop offset="40%" stop-color="#e8c89a" stop-opacity="0.85"/>
+          <stop offset="80%" stop-color="#c8986a" stop-opacity="0.7"/>
+          <stop offset="100%" stop-color="#a06840" stop-opacity="0.3"/>
+        </radialGradient>
+        <radialGradient id="glowGrad" cx="50%" cy="25%" r="60%">
+          <stop offset="0%" stop-color="#f8e8c8" stop-opacity="0.6"/>
+          <stop offset="100%" stop-color="#c8983a" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="blur1">
+          <feGaussianBlur stdDeviation="8"/>
+        </filter>
+        <filter id="blur2">
+          <feGaussianBlur stdDeviation="3"/>
+        </filter>
+      </defs>
+
+      <!-- Neck and shoulders -->
+      <ellipse cx="250" cy="820" rx="200" ry="120" fill="url(#skinGrad)" opacity="0.6"/>
+      <!-- Neck -->
+      <rect x="200" y="580" width="100" height="220" rx="50" fill="url(#skinGrad)" opacity="0.75"/>
+
+      <!-- Face shape -->
+      <ellipse cx="252" cy="400" rx="155" ry="195" fill="url(#skinGrad)"/>
+
+      <!-- Glow highlight -->
+      <ellipse cx="252" cy="320" rx="100" ry="130" fill="url(#glowGrad)"/>
+
+      <!-- Hair - top -->
+      <ellipse cx="252" cy="220" rx="165" ry="130" fill="#1a0e05" opacity="0.85"/>
+      <ellipse cx="252" cy="180" rx="155" ry="100" fill="#2a1508" opacity="0.9"/>
+
+      <!-- Hair flowing right -->
+      <path d="M 380 280 Q 440 360 430 500 Q 420 580 390 640" stroke="#1a0e05" stroke-width="80" stroke-linecap="round" fill="none" opacity="0.8"/>
+
+      <!-- Hair detail left -->
+      <path d="M 120 300 Q 80 400 90 520" stroke="#1a0e05" stroke-width="60" stroke-linecap="round" fill="none" opacity="0.75"/>
+
+      <!-- Ear -->
+      <ellipse cx="405" cy="410" rx="16" ry="24" fill="#d8a878" opacity="0.7"/>
+
+      <!-- Eye left (viewer's right) -->
+      <path d="M 190 370 Q 210 355 232 370 Q 210 388 190 370Z" fill="#2a1a0a" opacity="0.85"/>
+      <ellipse cx="211" cy="369" rx="11" ry="10" fill="#1a0a04" opacity="0.9"/>
+      <ellipse cx="208" cy="366" rx="4" ry="3.5" fill="rgba(255,255,255,0.4)"/>
+      <!-- Eye shadow left -->
+      <path d="M 185 366 Q 211 352 238 366" stroke="#8a5030" stroke-width="1.5" fill="none" opacity="0.5"/>
+
+      <!-- Eye right -->
+      <path d="M 268 370 Q 290 355 310 370 Q 290 388 268 370Z" fill="#2a1a0a" opacity="0.85"/>
+      <ellipse cx="289" cy="369" rx="11" ry="10" fill="#1a0a04" opacity="0.9"/>
+      <ellipse cx="286" cy="366" rx="4" ry="3.5" fill="rgba(255,255,255,0.4)"/>
+
+      <!-- Nose -->
+      <path d="M 248 400 Q 235 420 238 438 Q 252 445 266 438 Q 269 420 256 400" fill="#c8906a" opacity="0.3" filter="url(#blur2)"/>
+
+      <!-- Lips -->
+      <path d="M 225 465 Q 252 455 279 465 Q 266 478 252 480 Q 238 478 225 465Z" fill="#c06860" opacity="0.7"/>
+      <path d="M 225 465 Q 252 472 279 465 Q 266 486 252 490 Q 238 486 225 465Z" fill="#a84840" opacity="0.75"/>
+
+      <!-- Highlight on cheek -->
+      <ellipse cx="180" cy="425" rx="35" ry="20" fill="rgba(255,240,220,0.3)" filter="url(#blur1)"/>
+      <ellipse cx="330" cy="425" rx="30" ry="18" fill="rgba(255,240,220,0.25)" filter="url(#blur1)"/>
+
+      <!-- Eyelashes top left -->
+      <path d="M 186 365 Q 200 352 214 356 Q 220 350 228 354 Q 232 349 238 353" stroke="#1a0a04" stroke-width="1.8" fill="none" opacity="0.9" stroke-linecap="round"/>
+      <!-- Eyelashes top right -->
+      <path d="M 264 365 Q 278 352 292 356 Q 298 350 306 354 Q 311 349 317 353" stroke="#1a0a04" stroke-width="1.8" fill="none" opacity="0.9" stroke-linecap="round"/>
+
+      <!-- Subtle collar/clothing suggestion -->
+      <path d="M 100 760 Q 160 680 220 640 L 252 660 L 284 640 Q 340 680 400 760 Q 350 800 252 810 Q 154 800 100 760Z" fill="#1a0e05" opacity="0.4"/>
+
+      <!-- Gold/light shimmer across face -->
+      <ellipse cx="252" cy="350" rx="80" ry="100" fill="rgba(248,232,190,0.12)" filter="url(#blur1)"/>
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span>NEW ARRIVAL 2024</span>
+    </div>
+    <h1 class="hero-title">
+      光をまとう、<br>
+      <em>Velours</em> の<br>
+      肌へ。
+    </h1>
+    <p class="hero-sub">
+      天然由来成分92%*¹が紡ぐ、<br>
+      ビロードのようなつけ心地と<br>
+      一日中つづく美しいツヤ。
+    </p>
+    <a href="#product" class="hero-btn">
+      EXPLORE
+      <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
+        <path d="M10 1L15 6L10 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M1 6H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </a>
+  </div>
+
+  <div class="hero-product-name">
+    <span class="pname">VELOURS SERUM FOUNDATION</span>
+    <span class="psub">ヴェロア セラム ファンデーション</span>
+  </div>
+
+  <div class="scroll-indicator">
+    <span>SCROLL</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy" id="concept">
+  <div class="section-inner">
+    <span class="section-label">PHILOSOPHY</span>
+    <div class="gold-line"><div class="ornament-diamond"></div></div>
+
+    <p class="philosophy-quote fade-in">
+      素肌を愛おしむように、<br>
+      あなたらしい美しさと向き合う。<br>
+      ルミエールは、すべての女性の輝きを引き出すために<br>
+      生まれました。
+    </p>
+
+    <p class="philosophy-note fade-in fade-in-delay-1">
+      *¹ ISO 16128に基づく天然由来成分の含有率（水を含む）
+    </p>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="section-inner">
+    <span class="section-label">KEY FEATURES</span>
+    <h2 class="section-title fade-in">3つのこだわりが<br>完璧な仕上がりを叶える</h2>
+    <p class="section-lead fade-in fade-in-delay-1">
+      長年にわたるスキンケア研究と最先端のメイクアップ技術が融合。<br>
+      ひと塗りで、スキンケアしながら美しい素肌をつくります。
+    </p>
+  </div>
+
+  <div class="section-inner">
+    <div class="features-grid">
+      <div class="feature-card fade-in">
+        <span class="feature-num">01</span>
+        <svg class="feature-icon" viewBox="0 0 64 64" fill="none">
+          <circle cx="32" cy="32" r="28" stroke="#C9A96E" stroke-width="1"/>
+          <path d="M32 12 Q42 22 42 32 Q42 46 32 52 Q22 46 22 32 Q22 22 32 12Z" fill="rgba(201,169,110,0.15)" stroke="#C9A96E" stroke-width="1"/>
+          <ellipse cx="32" cy="24" rx="6" ry="9" fill="rgba(201,169,110,0.3)"/>
+          <path d="M20 32 Q26 28 32 30 Q38 28 44 32" stroke="#C9A96E" stroke-width="1" fill="none"/>
+        </svg>
+        <p class="feature-title-en">Moisture Veil</p>
+        <h3 class="feature-title-ja">うるおいの薄いヴェール</h3>
+        <p class="feature-text">
+          独自のヒアルロン酸複合体が肌の奥まで浸透。一日中うるおいを逃がさず、夕方になっても乾きや崩れを感じさせません。
+        </p>
+      </div>
+
+      <div class="feature-card fade-in fade-in-delay-1">
+        <span class="feature-num">02</span>
+        <svg class="feature-icon" viewBox="0 0 64 64" fill="none">
+          <circle cx="32" cy="32" r="28" stroke="#C9A96E" stroke-width="1"/>
+          <path d="M20 40 Q28 20 32 18 Q36 20 44 40" stroke="#C9A96E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <ellipse cx="32" cy="30" rx="14" ry="6" fill="rgba(201,169,110,0.2)"/>
+          <circle cx="32" cy="26" r="3" fill="#C9A96E" opacity="0.5"/>
+          <path d="M24 44 Q32 38 40 44" stroke="#C9A96E" stroke-width="1" fill="none"/>
+        </svg>
+        <p class="feature-title-en">Serum Care</p>
+        <h3 class="feature-title-ja">美容液仕立ての処方</h3>
+        <p class="feature-text">
+          ビタミンC誘導体・レチノール・コラーゲンを高配合。ファンデーションとして使いながら、毎日のスキンケア効果を実感できます。
+        </p>
+      </div>
+
+      <div class="feature-card fade-in fade-in-delay-2">
+        <span class="feature-num">03</span>
+        <svg class="feature-icon" viewBox="0 0 64 64" fill="none">
+          <circle cx="32" cy="32" r="28" stroke="#C9A96E" stroke-width="1"/>
+          <path d="M22 22 L42 22 L38 44 L32 48 L26 44 Z" fill="rgba(201,169,110,0.15)" stroke="#C9A96E" stroke-width="1"/>
+          <path d="M26 22 L24 14 M38 22 L40 14" stroke="#C9A96E" stroke-width="1" stroke-linecap="round"/>
+          <line x1="22" y1="30" x2="42" y2="30" stroke="#C9A96E" stroke-width="1"/>
+          <line x1="23" y1="36" x2="41" y2="36" stroke="#C9A96E" stroke-width="1"/>
+        </svg>
+        <p class="feature-title-en">Long Lasting</p>
+        <h3 class="feature-title-ja">16時間崩れない密着力</h3>
+        <p class="feature-text">
+          特殊フィルム形成技術が肌にぴったりフィット。皮脂・汗・こすれにも強く、朝から夜まで美しい仕上がりをキープします。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT DETAIL -->
+<section class="product-detail" id="product">
+  <div class="product-split">
+    <div class="product-visual">
+      <div class="product-visual-bg"></div>
+      <!-- Bottle illustration -->
+      <svg class="bottle-art" viewBox="0 0 140 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="bottleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#8a7040"/>
+            <stop offset="30%" stop-color="#c9a96e"/>
+            <stop offset="55%" stop-color="#f0e0b8"/>
+            <stop offset="75%" stop-color="#c9a96e"/>
+            <stop offset="100%" stop-color="#7a6030"/>
+          </linearGradient>
+          <linearGradient id="capGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#b89050"/>
+            <stop offset="35%" stop-color="#e8c880"/>
+            <stop offset="65%" stop-color="#e8c880"/>
+            <stop offset="100%" stop-color="#a07840"/>
+          </linearGradient>
+          <linearGradient id="contentGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#f0d8a8" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#c0986a" stop-opacity="0.8"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Cap -->
+        <rect x="40" y="10" width="60" height="72" rx="6" fill="url(#capGrad)"/>
+        <rect x="42" y="12" width="22" height="68" rx="3" fill="rgba(255,255,255,0.12)"/>
+        <rect x="44" y="30" width="4" height="34" rx="2" fill="rgba(255,255,255,0.25)"/>
+
+        <!-- Neck -->
+        <path d="M 55 82 L 50 102 L 90 102 L 85 82 Z" fill="url(#bottleGrad)"/>
+
+        <!-- Body -->
+        <path d="M 48 100 Q 20 120 18 200 Q 16 300 18 370 Q 18 390 38 400 L 102 400 Q 122 390 122 370 Q 124 300 122 200 Q 120 120 92 100 Z" fill="url(#bottleGrad)"/>
+
+        <!-- Content visible through bottle -->
+        <path d="M 52 108 Q 32 128 30 200 Q 28 295 30 365 Q 30 382 44 390 L 96 390 Q 110 382 110 365 Q 112 295 110 200 Q 108 128 88 108 Z" fill="url(#contentGrad)" opacity="0.5"/>
+
+        <!-- Label area -->
+        <rect x="28" y="200" width="84" height="120" rx="4" fill="rgba(245,237,216,0.9)"/>
+        <rect x="30" y="202" width="80" height="116" rx="3" fill="rgba(245,237,216,0.95)"/>
+
+        <!-- Label text representation -->
+        <text x="70" y="240" text-anchor="middle" font-family="serif" font-size="8" fill="#1B2A5C" letter-spacing="3" font-weight="300">LUMIÈRE</text>
+        <line x1="36" y1="246" x2="104" y2="246" stroke="#C9A96E" stroke-width="0.5"/>
+        <text x="70" y="262" text-anchor="middle" font-family="sans-serif" font-size="5.5" fill="#555" letter-spacing="1">VELOURS SERUM</text>
+        <text x="70" y="274" text-anchor="middle" font-family="sans-serif" font-size="5.5" fill="#555" letter-spacing="1">FOUNDATION</text>
+        <line x1="36" y1="280" x2="104" y2="280" stroke="#C9A96E" stroke-width="0.5"/>
+        <text x="70" y="295" text-anchor="middle" font-family="sans-serif" font-size="5" fill="#888">30g</text>
+
+        <!-- Highlight -->
+        <path d="M 30 130 Q 35 115 45 108 L 48 120 Q 38 128 34 148 Z" fill="rgba(255,255,255,0.2)"/>
+        <!-- Specular highlight on cap -->
+        <rect x="46" y="18" width="12" height="56" rx="3" fill="rgba(255,255,255,0.15)"/>
+      </svg>
+    </div>
+
+    <div class="product-info">
+      <div class="product-badge">NEW ARRIVAL</div>
+      <span class="product-name-en">LUMIÈRE</span>
+      <h2 class="product-name-ja">
+        ヴェロア セラム<br>ファンデーション
+      </h2>
+      <div class="product-divider"></div>
+      <p class="product-description">
+        天然由来92%*¹の美容液成分を贅沢に配合。<br>
+        ビロードのようになめらかなテクスチャーが肌に溶け込み、<br>
+        スキンケアしながら、ひと塗りで完璧な仕上がりへ。<br>
+        SPF35 / PA+++ 紫外線防御機能付き。
+      </p>
+
+      <div class="product-specs">
+        <div class="spec-item">
+          <span class="spec-label">VOLUME</span>
+          <span class="spec-value">30g</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">SPF / PA</span>
+          <span class="spec-value">SPF35 / PA+++</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">FINISH</span>
+          <span class="spec-value">サテン仕上げ</span>
+        </div>
+      </div>
+
+      <p class="color-title">— COLOR SELECTION</p>
+      <div class="color-swatches">
+        <div class="swatch-wrapper">
+          <div class="swatch s1 active" onclick="selectSwatch(this)"></div>
+          <span class="swatch-name">01 Ivory</span>
+        </div>
+        <div class="swatch-wrapper">
+          <div class="swatch s2" onclick="selectSwatch(this)"></div>
+          <span class="swatch-name">02 Beige</span>
+        </div>
+        <div class="swatch-wrapper">
+          <div class="swatch s3" onclick="selectSwatch(this)"></div>
+          <span class="swatch-name">03 Ochre</span>
+        </div>
+        <div class="swatch-wrapper">
+          <div class="swatch s4" onclick="selectSwatch(this)"></div>
+          <span class="swatch-name">04 Caramel</span>
+        </div>
+        <div class="swatch-wrapper">
+          <div class="swatch s5" onclick="selectSwatch(this)"></div>
+          <span class="swatch-name">05 Rose</span>
+        </div>
+      </div>
+
+      <p class="product-price">
+        <strong>¥8,800</strong>（税込）
+      </p>
+      <a href="#purchase" class="btn-primary">
+        購入する
+        <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
+          <path d="M10 1L15 6L10 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M1 6H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONCEPT BANNER -->
+<div class="concept-banner">
+  <p class="concept-text">
+    肌は、あなた自身の物語を語る。<br>
+    <em>Lumière</em> — 光の名を冠したこのファンデーションが、<br>
+    その物語をより美しく照らし出します。
+  </p>
+</div>
+
+<!-- INGREDIENTS -->
+<section class="ingredients" id="ingredients">
+  <div class="section-inner">
+    <span class="section-label">INGREDIENTS</span>
+    <h2 class="section-title fade-in">肌を育てる<br>プレミアム成分</h2>
+    <p class="section-lead fade-in fade-in-delay-1">
+      長年の研究から厳選された4つの主要美容成分。<br>
+      メイクをするたびに、肌本来の美しさを引き出します。
+    </p>
+    <div class="ornament-divider"><div class="ornament-diamond"></div></div>
+
+    <div class="ingredients-grid">
+      <div class="ingredient-card fade-in">
+        <svg class="ingredient-icon" viewBox="0 0 80 80" fill="none">
+          <circle cx="40" cy="40" r="36" stroke="#C9A96E" stroke-width="1" stroke-dasharray="4 3"/>
+          <path d="M40 16 Q52 24 56 36 Q60 50 52 60 Q44 70 34 66 Q22 60 20 48 Q18 36 26 26 Q32 18 40 16Z" fill="rgba(201,169,110,0.15)" stroke="#C9A96E" stroke-width="1"/>
+          <circle cx="40" cy="40" r="8" fill="rgba(201,169,110,0.3)"/>
+          <path d="M40 24 L40 32 M40 48 L40 56 M24 40 L32 40 M48 40 L56 40" stroke="#C9A96E" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="ingredient-name-en">Hyaluronic Acid EX</span>
+        <span class="ingredient-name-ja">超高分子ヒアルロン酸</span>
+        <p class="ingredient-text">
+          通常の3倍の保湿力を持つ超高分子型。肌表面を水分の膜で包み込み、一日中みずみずしさをキープします。
+        </p>
+      </div>
+
+      <div class="ingredient-card fade-in fade-in-delay-1">
+        <svg class="ingredient-icon" viewBox="0 0 80 80" fill="none">
+          <circle cx="40" cy="40" r="36" stroke="#C9A96E" stroke-width="1" stroke-dasharray="4 3"/>
+          <path d="M30 18 Q22 30 22 40 Q22 58 40 64 Q58 58 58 40 Q58 30 50 18" stroke="#C9A96E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <ellipse cx="40" cy="34" rx="12" ry="16" fill="rgba(201,169,110,0.2)" stroke="#C9A96E" stroke-width="1"/>
+          <ellipse cx="40" cy="34" rx="5" ry="7" fill="rgba(201,169,110,0.4)"/>
+        </svg>
+        <span class="ingredient-name-en">Vitamin C Derivative</span>
+        <span class="ingredient-name-ja">安定型ビタミンC誘導体</span>
+        <p class="ingredient-text">
+          皮膚科学で実証された美白有効成分*²。肌のくすみにアプローチし、透明感あふれる明るい肌色に整えます。
+        </p>
+      </div>
+
+      <div class="ingredient-card fade-in fade-in-delay-2">
+        <svg class="ingredient-icon" viewBox="0 0 80 80" fill="none">
+          <circle cx="40" cy="40" r="36" stroke="#C9A96E" stroke-width="1" stroke-dasharray="4 3"/>
+          <path d="M28 54 Q20 42 24 30 Q28 20 40 18 Q52 20 56 30 Q60 42 52 54" stroke="#C9A96E" stroke-width="1.5" fill="none"/>
+          <path d="M32 54 Q34 64 40 66 Q46 64 48 54" stroke="#C9A96E" stroke-width="1.5" fill="none"/>
+          <circle cx="40" cy="36" r="10" fill="rgba(201,169,110,0.2)" stroke="#C9A96E" stroke-width="1"/>
+          <path d="M34 36 Q37 30 40 28 Q43 30 46 36" fill="rgba(201,169,110,0.3)" stroke="none"/>
+        </svg>
+        <span class="ingredient-name-en">Marine Collagen</span>
+        <span class="ingredient-name-ja">マリンコラーゲン</span>
+        <p class="ingredient-text">
+          深海魚由来の低分子コラーゲンが肌に素早く浸透。ハリと弾力を与え、ふっくら若々しい肌印象をつくります。
+        </p>
+      </div>
+
+      <div class="ingredient-card fade-in fade-in-delay-3">
+        <svg class="ingredient-icon" viewBox="0 0 80 80" fill="none">
+          <circle cx="40" cy="40" r="36" stroke="#C9A96E" stroke-width="1" stroke-dasharray="4 3"/>
+          <!-- Rose motif -->
+          <path d="M40 24 Q46 28 48 34 Q50 40 46 46 Q42 52 36 50 Q28 46 26 40 Q24 32 30 26 Q34 22 40 24Z" fill="rgba(201,169,110,0.15)" stroke="#C9A96E" stroke-width="1"/>
+          <path d="M40 28 Q44 32 44 38 Q44 44 40 46 Q36 44 36 38 Q36 32 40 28Z" fill="rgba(201,169,110,0.25)" stroke="#C9A96E" stroke-width="0.8"/>
+          <circle cx="40" cy="38" r="4" fill="rgba(201,169,110,0.5)"/>
+          <path d="M40 46 L40 58 M34 50 Q30 56 28 62 M46 50 Q50 56 52 62" stroke="#C9A96E" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+        <span class="ingredient-name-en">Rose Hip Oil</span>
+        <span class="ingredient-name-ja">ローズヒップオイル</span>
+        <p class="ingredient-text">
+          天然由来の必須脂肪酸が豊富に含まれ、肌のバリア機能を強化。乾燥によるくすみや小じわを目立ちにくくします。
+        </p>
+      </div>
+    </div>
+
+    <p class="philosophy-note" style="margin-top:40px;">
+      *² メラニンの生成を抑え、しみ・そばかすを防ぐ
+    </p>
+  </div>
+</section>
+
+<!-- TEXTURE -->
+<section class="texture-section" id="texture">
+  <div class="section-inner">
+    <span class="section-label">TEXTURE</span>
+    <h2 class="section-title fade-in">ヴェロアのような<br>なめらかな肌感触</h2>
+    <p class="section-lead fade-in fade-in-delay-1">
+      塗布した瞬間に肌と一体化するユニークテクスチャー。<br>
+      重さゼロの感触で、素肌のような自然な仕上がりを実現。
+    </p>
+
+    <div class="texture-split">
+      <div class="texture-visual fade-in"></div>
+      <div class="texture-points">
+        <div class="texture-point fade-in">
+          <span class="texture-point-num">01</span>
+          <div class="texture-point-content">
+            <h3 class="texture-point-title">肌に溶け込む超軽量処方</h3>
+            <p class="texture-point-text">独自のマイクロフルイド技術により、液状でありながら乾燥後は粉体のようなさらさら感。重ね塗りしても厚みが出ません。</p>
+          </div>
+        </div>
+
+        <div class="texture-point fade-in fade-in-delay-1">
+          <span class="texture-point-num">02</span>
+          <div class="texture-point-content">
+            <h3 class="texture-point-title">毛穴・凹凸をなめらかに補整</h3>
+            <p class="texture-point-text">球状シリコンパウダーが光を乱反射させ、毛穴や凹凸を視覚的にカモフラージュ。フィルタリングされたようなつるんとした肌へ。</p>
+          </div>
+        </div>
+
+        <div class="texture-point fade-in fade-in-delay-2">
+          <span class="texture-point-num">03</span>
+          <div class="texture-point-content">
+            <h3 class="texture-point-title">自然なツヤと透明感</h3>
+            <p class="texture-point-text">パールパウダーが内側から輝くような上品なツヤをプラス。自然光・室内照明どちらでも、美しいトーンを演出します。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO USE -->
+<section class="howto" id="howto">
+  <div class="section-inner">
+    <span class="section-label">HOW TO USE</span>
+    <h2 class="section-title">4ステップで完成する<br>パーフェクトな仕上がり</h2>
+    <p class="section-lead">
+      スキンケアのあと、ブラシやスポンジ、または指でお使いください。<br>
+      少量を顔の中心から外側に向けて広げるようにのばします。
+    </p>
+
+    <div class="steps">
+      <div class="step fade-in">
+        <span class="step-num">STEP 01</span>
+        <svg class="step-icon" viewBox="0 0 56 56" fill="none">
+          <circle cx="28" cy="28" r="26" stroke="#C9A96E" stroke-width="1"/>
+          <ellipse cx="28" cy="22" rx="12" ry="14" stroke="#C9A96E" stroke-width="1.5" fill="none"/>
+          <path d="M16 36 Q20 44 28 46 Q36 44 40 36" stroke="#C9A96E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <path d="M22 20 Q24 16 28 15 Q32 16 34 20" stroke="#C9A96E" stroke-width="1" fill="none" stroke-linecap="round"/>
+        </svg>
+        <h3 class="step-title">スキンケア後に</h3>
+        <p class="step-text">洗顔・化粧水・乳液で肌を整えてから。乳液が肌になじんだあとにお使いください。</p>
+      </div>
+
+      <div class="step fade-in fade-in-delay-1">
+        <span class="step-num">STEP 02</span>
+        <svg class="step-icon" viewBox="0 0 56 56" fill="none">
+          <circle cx="28" cy="28" r="26" stroke="#C9A96E" stroke-width="1"/>
+          <rect x="20" y="14" width="16" height="28" rx="8" stroke="#C9A96E" stroke-width="1.5" fill="none"/>
+          <rect x="24" y="38" width="8" height="6" rx="2" fill="rgba(201,169,110,0.3)" stroke="#C9A96E" stroke-width="1"/>
+          <path d="M24 20 L32 20 M24 24 L32 24" stroke="#C9A96E" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+        </svg>
+        <h3 class="step-title">適量をとる</h3>
+        <p class="step-text">パール粒1〜2個分を手の甲にとります。少量から始め、カバー感に応じて調整してください。</p>
+      </div>
+
+      <div class="step fade-in fade-in-delay-2">
+        <span class="step-num">STEP 03</span>
+        <svg class="step-icon" viewBox="0 0 56 56" fill="none">
+          <circle cx="28" cy="28" r="26" stroke="#C9A96E" stroke-width="1"/>
+          <ellipse cx="28" cy="24" rx="14" ry="16" stroke="#C9A96E" stroke-width="1.5" fill="none"/>
+          <path d="M20 30 Q24 26 28 28 Q32 30 36 28" stroke="#C9A96E" stroke-width="1" fill="none" stroke-linecap="round"/>
+          <path d="M22 36 Q28 40 34 36" stroke="#C9A96E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <circle cx="23" cy="23" r="2" fill="rgba(201,169,110,0.5)"/>
+          <circle cx="33" cy="23" r="2" fill="rgba(201,169,110,0.5)"/>
+        </svg>
+        <h3 class="step-title">中心から外へのばす</h3>
+        <p class="step-text">鼻・頬の中心にのせ、指またはスポンジで外側に向けてなじませます。額・顎も同様に。</p>
+      </div>
+
+      <div class="step fade-in fade-in-delay-3">
+        <span class="step-num">STEP 04</span>
+        <svg class="step-icon" viewBox="0 0 56 56" fill="none">
+          <circle cx="28" cy="28" r="26" stroke="#C9A96E" stroke-width="1"/>
+          <path d="M18 28 Q18 18 28 16 Q38 18 38 28 Q38 42 28 44 Q18 42 18 28Z" fill="rgba(201,169,110,0.12)" stroke="#C9A96E" stroke-width="1.5"/>
+          <path d="M22 24 Q26 20 32 22 Q36 26 34 32 Q30 38 24 36 Q18 32 22 24Z" fill="rgba(201,169,110,0.25)"/>
+          <path d="M24 28 Q27 24 30 26 Q32 30 30 34 Q26 36 24 32 Q22 30 24 28Z" fill="rgba(201,169,110,0.45)"/>
+        </svg>
+        <h3 class="step-title">仕上げにフィックス</h3>
+        <p class="step-text">全体をなじませたら、手のひらで軽くプレスして密着させます。ミストで仕上げると長持ちします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="reviews">
+  <div class="section-inner">
+    <span class="section-label">REVIEWS</span>
+    <h2 class="section-title fade-in">お客様の声</h2>
+    <p class="section-lead fade-in fade-in-delay-1">
+      実際にお使いいただいたお客様からいただいた感想をご紹介します。
+    </p>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-stars">
+          <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+        </div>
+        <p class="testimonial-text">
+          40代になって乾燥が気になるようになったのですが、このファンデは夕方でも粉浮きしません。スキンケアしながらメイクできるのが嬉しい。香りも上品で毎朝のメイクが楽しくなりました。
+        </p>
+        <div class="testimonial-author">
+          <svg class="author-avatar" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="20" fill="#f0e0d0"/>
+            <ellipse cx="20" cy="15" rx="8" ry="9" fill="#c8a888"/>
+            <ellipse cx="20" cy="34" rx="13" ry="10" fill="#c8a888"/>
+          </svg>
+          <div class="author-info">
+            <span class="name">Y.M さん</span>
+            <span class="age">44歳・乾燥肌</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card fade-in fade-in-delay-1">
+        <div class="testimonial-stars">
+          <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+        </div>
+        <p class="testimonial-text">
+          テクスチャーが本当になめらかで、肌に塗った瞬間に溶けるような感覚。カバー力もあるのに厚塗り感ゼロ。毛穴が気になっていたのに、すっと消えてくれます。リピート確定です！
+        </p>
+        <div class="testimonial-author">
+          <svg class="author-avatar" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="20" fill="#f0e0d0"/>
+            <ellipse cx="20" cy="15" rx="8" ry="9" fill="#d4a888"/>
+            <ellipse cx="20" cy="34" rx="13" ry="10" fill="#d4a888"/>
+          </svg>
+          <div class="author-info">
+            <span class="name">K.T さん</span>
+            <span class="age">38歳・混合肌</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card fade-in fade-in-delay-2">
+        <div class="testimonial-stars">
+          <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+          <div class="star" style="background:#e0e0e0; clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
+        </div>
+        <p class="testimonial-text">
+          50代でもここまで自然に仕上がるファンデは初めてです。小じわに入り込まず、むしろふっくらとした印象になりました。SPFも入っているので日焼け止めを省けて助かっています。
+        </p>
+        <div class="testimonial-author">
+          <svg class="author-avatar" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="20" fill="#f0e0d0"/>
+            <ellipse cx="20" cy="15" rx="8" ry="9" fill="#c09878"/>
+            <ellipse cx="20" cy="34" rx="13" ry="10" fill="#c09878"/>
+          </svg>
+          <div class="author-info">
+            <span class="name">N.O さん</span>
+            <span class="age">52歳・普通肌</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="purchase">
+  <div class="section-inner" style="position:relative;z-index:1;">
+    <span class="section-label">PURCHASE</span>
+    <h2 class="section-title">あなたの肌に、<br>ルミエールを。</h2>
+    <p class="section-lead">
+      全国の百貨店・ビューティーセレクトショップにてお取り扱い。<br>
+      オンラインストアでもご購入いただけます。
+    </p>
+
+    <div class="cta-buttons">
+      <a href="#" class="btn-primary">
+        オンラインストアで購入
+        <svg width="14" height="11" viewBox="0 0 16 12" fill="none">
+          <path d="M10 1L15 6L10 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M1 6H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </a>
+      <a href="#" class="btn-outline">
+        取扱店舗を探す
+      </a>
+      <a href="#" class="btn-outline">
+        無料サンプル申込
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="logo">LUMIÈRE</a>
+        <p class="footer-tagline">
+          光をまとう、最上の美しさへ。<br>
+          すべての女性の輝きを引き出すために、<br>
+          ルミエールは生まれました。
+        </p>
+      </div>
+
+      <div>
+        <span class="footer-nav-title">PRODUCTS</span>
+        <ul class="footer-nav">
+          <li><a href="#">ファンデーション</a></li>
+          <li><a href="#">化粧下地</a></li>
+          <li><a href="#">スキンケア</a></li>
+          <li><a href="#">新着アイテム</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <span class="footer-nav-title">BRAND</span>
+        <ul class="footer-nav">
+          <li><a href="#">ブランドストーリー</a></li>
+          <li><a href="#">成分へのこだわり</a></li>
+          <li><a href="#">サステナビリティ</a></li>
+          <li><a href="#">ニュース</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <span class="footer-nav-title">SUPPORT</span>
+        <ul class="footer-nav">
+          <li><a href="#">お問い合わせ</a></li>
+          <li><a href="#">よくある質問</a></li>
+          <li><a href="#">取扱店舗</a></li>
+          <li><a href="#">会員登録</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2024 LUMIÈRE BEAUTÉ INC. ALL RIGHTS RESERVED.</p>
+      <p>プライバシーポリシー　|　特定商取引法に基づく表記　|　利用規約</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Swatch selection
+  function selectSwatch(el) {
+    document.querySelectorAll('.swatch').forEach(s => s.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  // Scroll fade-in animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Smooth header opacity on scroll
+  const header = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 80) {
+      header.style.boxShadow = '0 2px 40px rgba(0,0,0,0.4)';
+    } else {
+      header.style.boxShadow = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>
