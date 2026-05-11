@@ -122,11 +122,41 @@
       bottom: 0;
       width: 55%;
       height: 100%;
+      overflow: hidden;
     }
 
-    .hero-model svg {
+    .hero-model img {
       width: 100%;
       height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    /* Photo fade: left edge blends into hero background */
+    .hero-model::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(
+        to right,
+        rgba(42,20,8,0.95) 0%,
+        rgba(42,20,8,0.5) 18%,
+        transparent 40%
+      );
+      pointer-events: none;
+    }
+
+    /* Bottom fade */
+    .hero-model::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 20%;
+      z-index: 1;
+      background: linear-gradient(to top, rgba(42,20,8,0.6), transparent);
+      pointer-events: none;
     }
 
     .hero-content {
@@ -1102,87 +1132,9 @@
   <div class="hero-bg-overlay"></div>
   <div class="hero-rays"></div>
 
-  <!-- Decorative model silhouette -->
+  <!-- Hero model photo (Unsplash / free commercial use) -->
   <div class="hero-model">
-    <svg viewBox="0 0 500 800" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax meet">
-      <!-- Abstract elegant face silhouette -->
-      <defs>
-        <radialGradient id="skinGrad" cx="50%" cy="35%" r="55%">
-          <stop offset="0%" stop-color="#f5dbb8" stop-opacity="0.9"/>
-          <stop offset="40%" stop-color="#e8c89a" stop-opacity="0.85"/>
-          <stop offset="80%" stop-color="#c8986a" stop-opacity="0.7"/>
-          <stop offset="100%" stop-color="#a06840" stop-opacity="0.3"/>
-        </radialGradient>
-        <radialGradient id="glowGrad" cx="50%" cy="25%" r="60%">
-          <stop offset="0%" stop-color="#f8e8c8" stop-opacity="0.6"/>
-          <stop offset="100%" stop-color="#c8983a" stop-opacity="0"/>
-        </radialGradient>
-        <filter id="blur1">
-          <feGaussianBlur stdDeviation="8"/>
-        </filter>
-        <filter id="blur2">
-          <feGaussianBlur stdDeviation="3"/>
-        </filter>
-      </defs>
-
-      <!-- Neck and shoulders -->
-      <ellipse cx="250" cy="820" rx="200" ry="120" fill="url(#skinGrad)" opacity="0.6"/>
-      <!-- Neck -->
-      <rect x="200" y="580" width="100" height="220" rx="50" fill="url(#skinGrad)" opacity="0.75"/>
-
-      <!-- Face shape -->
-      <ellipse cx="252" cy="400" rx="155" ry="195" fill="url(#skinGrad)"/>
-
-      <!-- Glow highlight -->
-      <ellipse cx="252" cy="320" rx="100" ry="130" fill="url(#glowGrad)"/>
-
-      <!-- Hair - top -->
-      <ellipse cx="252" cy="220" rx="165" ry="130" fill="#1a0e05" opacity="0.85"/>
-      <ellipse cx="252" cy="180" rx="155" ry="100" fill="#2a1508" opacity="0.9"/>
-
-      <!-- Hair flowing right -->
-      <path d="M 380 280 Q 440 360 430 500 Q 420 580 390 640" stroke="#1a0e05" stroke-width="80" stroke-linecap="round" fill="none" opacity="0.8"/>
-
-      <!-- Hair detail left -->
-      <path d="M 120 300 Q 80 400 90 520" stroke="#1a0e05" stroke-width="60" stroke-linecap="round" fill="none" opacity="0.75"/>
-
-      <!-- Ear -->
-      <ellipse cx="405" cy="410" rx="16" ry="24" fill="#d8a878" opacity="0.7"/>
-
-      <!-- Eye left (viewer's right) -->
-      <path d="M 190 370 Q 210 355 232 370 Q 210 388 190 370Z" fill="#2a1a0a" opacity="0.85"/>
-      <ellipse cx="211" cy="369" rx="11" ry="10" fill="#1a0a04" opacity="0.9"/>
-      <ellipse cx="208" cy="366" rx="4" ry="3.5" fill="rgba(255,255,255,0.4)"/>
-      <!-- Eye shadow left -->
-      <path d="M 185 366 Q 211 352 238 366" stroke="#8a5030" stroke-width="1.5" fill="none" opacity="0.5"/>
-
-      <!-- Eye right -->
-      <path d="M 268 370 Q 290 355 310 370 Q 290 388 268 370Z" fill="#2a1a0a" opacity="0.85"/>
-      <ellipse cx="289" cy="369" rx="11" ry="10" fill="#1a0a04" opacity="0.9"/>
-      <ellipse cx="286" cy="366" rx="4" ry="3.5" fill="rgba(255,255,255,0.4)"/>
-
-      <!-- Nose -->
-      <path d="M 248 400 Q 235 420 238 438 Q 252 445 266 438 Q 269 420 256 400" fill="#c8906a" opacity="0.3" filter="url(#blur2)"/>
-
-      <!-- Lips -->
-      <path d="M 225 465 Q 252 455 279 465 Q 266 478 252 480 Q 238 478 225 465Z" fill="#c06860" opacity="0.7"/>
-      <path d="M 225 465 Q 252 472 279 465 Q 266 486 252 490 Q 238 486 225 465Z" fill="#a84840" opacity="0.75"/>
-
-      <!-- Highlight on cheek -->
-      <ellipse cx="180" cy="425" rx="35" ry="20" fill="rgba(255,240,220,0.3)" filter="url(#blur1)"/>
-      <ellipse cx="330" cy="425" rx="30" ry="18" fill="rgba(255,240,220,0.25)" filter="url(#blur1)"/>
-
-      <!-- Eyelashes top left -->
-      <path d="M 186 365 Q 200 352 214 356 Q 220 350 228 354 Q 232 349 238 353" stroke="#1a0a04" stroke-width="1.8" fill="none" opacity="0.9" stroke-linecap="round"/>
-      <!-- Eyelashes top right -->
-      <path d="M 264 365 Q 278 352 292 356 Q 298 350 306 354 Q 311 349 317 353" stroke="#1a0a04" stroke-width="1.8" fill="none" opacity="0.9" stroke-linecap="round"/>
-
-      <!-- Subtle collar/clothing suggestion -->
-      <path d="M 100 760 Q 160 680 220 640 L 252 660 L 284 640 Q 340 680 400 760 Q 350 800 252 810 Q 154 800 100 760Z" fill="#1a0e05" opacity="0.4"/>
-
-      <!-- Gold/light shimmer across face -->
-      <ellipse cx="252" cy="350" rx="80" ry="100" fill="rgba(248,232,190,0.12)" filter="url(#blur1)"/>
-    </svg>
+    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=900&q=85&fit=crop&crop=top" alt="モデル" loading="eager">
   </div>
 
   <div class="hero-content">
